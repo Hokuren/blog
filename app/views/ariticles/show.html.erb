@@ -3,12 +3,26 @@
 <p>
     Escrito por: <%= @article.user.email %>
 </p>
+<div class="field">
+    <%= image_tag @article.cover.url(:thumb) %>
+</div>
+<% end %>
 <p>
     Visitas : <%= @article.visits_count %>
 </p>
-<% end %>
 <div>   
     <%= @article.body %>
+</div>
+<div class="field">
+    <h3>Comentarios</h3>
+    <%= render '/comments/form' %>   
+<ul>
+    <% @article.comments.each do |comment| %>
+    <li>
+        <%= comment.body %> - <%= comment.user.email %>
+    </li>
+    <% end %>
+</ul>
 </div>
 <div>
     <%= link_to "Editar", edit_ariticle_path(@article) %>

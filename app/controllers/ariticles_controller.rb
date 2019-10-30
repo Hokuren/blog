@@ -10,11 +10,14 @@ class AriticlesController < ApplicationController
     def show
         #@article =Ariticle.find(params[:id])
         @article.update_visits_count
+        @comment = Comment.new
+        
     end
 
     #GET /articles/new
     def new
         @article = Ariticle.new
+        @categories = Category.all
     end
 
     def edit
@@ -65,7 +68,7 @@ class AriticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:ariticle).permit(:title,:body)
+        params.require(:ariticle).permit(:title,:body,:cover)
     end
 
 end

@@ -2,20 +2,17 @@
     <nav class = "be-red white large-padding">
     <ul class = "no-list row center-xs middle-xs">
         <li class = "no-margin" id="logo">
-        Blog Facilito 
+        <%= link_to "Blog Facilito", root_path %>
         </li>
         <li class = "col-md">
-        <%= link_to "Inicio", root_path %>
+            <%= link_to "Articulos", ariticles_path %>
         </li>
-        <li class = "col-md">
-        Diseño
-        </li>
-        <li class = "col-md">
-        Programacion
-        </li>
-        <li class = "col-md">
-        Tecnologia
-        </li>
+        <% @categories.each do |category| %>
+            <li class = "col-md">
+                <%= category.name %>
+            </li>
+        <% end %>
+       
     <!-- Configuracion de usuario -->
         <% if user_signed_in? %>
         <li class = "col-md">
