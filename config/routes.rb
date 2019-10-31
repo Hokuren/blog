@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   resources :ariticles do
     resources :comments, only: [:create,:destroy,:update]
   end  
+  get "/dashboard", to: "welcome#dashboard"
   devise_for :users
   root 'welcome#index'
-
+  put  '/ariticles/:id/publish', to: "ariticles#publish"
 
   #get 'welcome/index'
   #get 'especial', to: 'welcome#index'

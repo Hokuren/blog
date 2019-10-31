@@ -1,0 +1,11 @@
+<%= @articles.inspect %>
+<br>
+<%  @articles.each do |article| %>
+    <h1><%= link_to article.title, article %></h1>
+    <% if article.may_publish? %>
+    <div>
+        <%= article.body %> - <%= link_to "Eliminar", article, method: :delete, class:"red"%> 
+        - <%= link_to "Publicar", "/ariticles/#{ article.id }/publish", class:"purple", method: :put %>
+    </div>
+    <% end %>
+<% end %>

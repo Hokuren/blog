@@ -24,11 +24,20 @@ a,a:visited{
 .red{
     color: #FF4438 !important;
 }
+.purple {
+    color: #3d36e9;
+}
 .be-red {
     background-color: #FF4438;
 }
+.underline{
+    text-decoration: none;
+}
 .white {
     color: #FFF9F4;
+}
+.gray{
+    color: #616161;
 }
 .large-padding{
     padding: 8px 7px;
@@ -39,8 +48,36 @@ li{
 .field ,.top-space ,.actions{
     margin-top: 1em;
 }
+.background-cover{
+    background-position: center;
+    background-size: cover;
+}
 .text-left{
     text-align: left;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.text-justify{
+    text-align: justify;
+}
+.be-big {
+    font-size: 2em;
+}
+.be-small{
+    font-size: 12px;
+}
+.article-height{
+    height: 300px;
+}
+.relative{
+    position: relative;
+}
+.position {
+    position: absolute;
 }
 .form-control{
     border: none;
@@ -50,4 +87,7 @@ li{
     display: block;
     padding: 10px 0px;
     font-size: 1.2em;   
+}
+.bottm-space{
+    margin-bottom: 2em;
 }

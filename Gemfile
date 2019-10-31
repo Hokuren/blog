@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise' #agregada por oscar
 gem 'jquery-turbolinks'
 gem 'paperclip'
+gem 'aasm'
+gem 'will_paginate'
 
 
 # Reduces boot times through caching; required in config/boot.rb

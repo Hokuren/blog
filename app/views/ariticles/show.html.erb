@@ -1,3 +1,35 @@
+<article class="bottom-space">
+    <%= article_cover @article.cover.url %>
+
+    </header>
+    <div class="row center-xs">
+        <div class="col-xs-12 ligth-border col-md-7">
+            <h1 class="be-big blue"><%= @article.title %></h1>
+            <p class="text-right be-small"> 
+                <%= link_to "Atras", ariticles_path, class:"underline" %>
+                <span class="red"><%= @article.visits_count %> Visitas(s)</span>
+                -
+                <% unless @article.user.nil? %>
+                Escrito por: <%= @article.user.email %>
+                <% end %>
+            </p> 
+
+            <div class="text-justify">   
+                <%= @article.body %>
+            </div> 
+
+            <div>
+                <h3>Comentarios</h3>
+                <%= render '/comments/form' %>   
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
 <h1><%= @article.title %></h1>
 <% unless @article.user.nil? %>
 <p>
