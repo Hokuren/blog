@@ -29,6 +29,7 @@ class AriticlesController < ApplicationController
         #insert into 
         #@article = Ariticle.new(title: params[:ariticle][:title],body: params[:ariticle][:body]) 
         @article = current_user.ariticles.new(article_params)
+        @article.categories = params[:categories]
         if @article.save
             redirect_to @article
         else
@@ -68,7 +69,7 @@ class AriticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:ariticle).permit(:title,:body,:cover)
+        params.require(:ariticle).permit(:title,:body,:cover,:categories)
     end
 
 end
